@@ -73,4 +73,5 @@ The **Coffee Shop Sales Dashboard** provides an at-a-glance, drill-down view of 
 - **Product Mix Strategy**: Coffee & tea lead revenue; bakery’s decline suggests a promotion or refresh opportunity
 
  **ScreenShot**
-https://github.com/rahuldhakar-tech/Coffee-shop-sales/blob/main/Snapshot%20coffee%20sales.PNG
+[![Dashboard Snapshot](https://raw.githubusercontent.com/rahuldhakar-tech/Coffee-shop-sales/main/Snapshot%20coffee%20sales.PNG)](https://github.com/rahuldhakar-tech/Coffee-shop-sales/blob/main/Snapshot%20coffee%20sales.PNG)
+
