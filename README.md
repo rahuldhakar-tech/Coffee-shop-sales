@@ -6,7 +6,7 @@ Short description / purpose
 
 The Coffee Shop Sales Dashboard provides an at-a-glance and drillable view of revenue, orders, and quantities across stores, products, days, and hours. It helps store managers and analysts identify peak times, top-selling items, and month-over-month performance so they can optimize staffing, inventory, and promotions.
 
-Tech stack
+1.Tech stack
 
 📊 Power BI Desktop (.pbix / .pbit) — report development and visuals
 
@@ -20,7 +20,7 @@ Tech stack
 
 🎥 Demo/Images — exported screenshots, GIF or short video for quick preview
 
-Data source & structure
+2.Data source & structure
 
 Source: Point-of-sale (POS) style sales data (anonymized for sharing).
 Primary tables:
@@ -34,7 +34,8 @@ products (product_id, product_name, category)
 calendar (date, day_of_week, month, year, is_weekend)
 
 Scope: Daily and hourly granularity for the selected month with historical months available for MoM comparisons.
-Key features / highlights
+
+3.Key features / highlights
 
 Top KPIs: Total Sales, Total Orders, Total Quantity (with MoM % and sparkline trend).
 
@@ -49,6 +50,8 @@ Day × Hour heatmap: Visualize hourly demand across weekdays to optimize staffin
 Store-level analytics: MoM comparisons for each store to detect under/over-performance.
 
 Drill-through & filters: Click to drill into transactions or filter across the report by store, product, or date.
+
+4.Walkthrough of Key Visuals
 Key KPIs (Top Row Cards)
 
 Total Sales: $99K (+29.8% vs LM)
@@ -104,7 +107,7 @@ Hot Chocolate: $10.2K (+26.1%)
 Sales by Day & Hour (Heatmap)
 Shows hourly sales across weekdays and weekends. Strongest demand between 10 AM–12 PM on weekdays; weaker sales in evenings.
 
-Business Impact & Insights
+5.Business Impact & Insights
 
 Revenue Growth Monitoring: Month-over-month increases (+29%) signal effective sales strategies.
 
