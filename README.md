@@ -1,121 +1,76 @@
-Coffee Shop Sales Dashboard
+# Coffee Shop Sales Dashboard
 
-An interactive Power BI report for retail sales & operations insights
+**Overview**
 
-Short description / purpose
+The **Coffee Shop Sales Dashboard** provides an at-a-glance, drill-down view of revenue, orders, and quantities across stores, products, days, and hours. Designed for store managers and analysts, the dashboard helps uncover peak times, best-selling items, and month-over-month performance, enabling optimized staffing, inventory, and promotions.
 
-The Coffee Shop Sales Dashboard provides an at-a-glance and drillable view of revenue, orders, and quantities across stores, products, days, and hours. It helps store managers and analysts identify peak times, top-selling items, and month-over-month performance so they can optimize staffing, inventory, and promotions.
+**Tech Stack**
 
-1.Tech stack
+- **Power BI Desktop** (`.pbix` / `.pbit`) – report development and visuals  
+- **Power Query (M)** – data ingestion and transformation  
+- **DAX** – calculated measures (KPIs, MoM % change, average daily line, conditional formatting)  
+- **SQL (T-SQL / `.sql`)** – ETL and reporting views to prepare the data model (`/sql/`)  
+- **CSV** – anonymized sample data for reproducibility  
+- **Demo / Images** – exported screenshots, GIFs, or short video for quick preview
 
-📊 Power BI Desktop (.pbix / .pbit) — report development and visuals
+**Data Source & Structure**
 
-🔁 Power Query (M) — data ingestion and transformation
+- **Source**: Anonymized POS-style sales data  
+- **Tables**:  
+  - `sales` (`order_id`, `store_id`, `product_id`, `order_datetime`, `qty`, `unit_price`, `total_amount`)  
+  - `stores` (`store_id`, `store_name`, `city`, `region`)  
+  - `products` (`product_id`, `product_name`, `category`)  
+  - `calendar` (`date`, `day_of_week`, `month`, `year`, `is_weekend`)  
+- **Scope**: Daily and hourly granularity for the selected month, with historical months for MoM comparisons
 
-🧠 DAX — calculated measures (KPIs, MoM % change, average daily line, conditional formatting)
+**Key Features & Visuals**
 
-🗂️ SQL (T‑SQL / .sql) — ETL / reporting views used to prepare model (see /sql/)
+- **Top KPIs**: Total Sales, Total Orders, Total Quantity (with MoM %, sparklines)  
+- **Calendar Heatmap**: Monthly slicer with days colored by sales volume, plus detailed tooltips  
+- **Daily Trend Chart**: Bars of daily sales with a dotted average line; color-coded above/below average  
+- **Sales by Category & Top 10 Products**: Ranked bar charts with MoM change badges for insights into promotions and inventory  
+- **Day × Hour Heatmap**: Hourly demand across weekdays—ideal for staffing optimization  
+- **Store-level Analytics**: MoM comparisons per store to spotlight performance deviations  
+- **Drill-through & Filtering**: Click to explore transactions or filter by store, product, or date
 
-📁 CSV — anonymized sample data for reproducibility
+**Walkthrough Snapshot**
 
-🎥 Demo/Images — exported screenshots, GIF or short video for quick preview
+- **Key KPIs (Cards)**  
+  - Total Sales: $99K (+29.8% vs LM)  
+  - Total Orders: 21,229 (+29.8%)  
+  - Total Quantity Sold: 30,406 (+29.1%)  
+  - Avg Daily Sales: $3,188
 
-2.Data source & structure
+- **Calendar Heatmap** – Shows daily variance in sales performance  
+- **Sales: Weekday vs. Weekend** (Donut Chart):  
+  - Weekday: $73K (74%)  
+  - Weekend: $25K (26%)
 
-Source: Point-of-sale (POS) style sales data (anonymized for sharing).
-Primary tables:
+- **Sales by Store** (Bar Chart):  
+  - Hell’s Kitchen: $33.1K  
+  - Lower Manhattan: $32.8K  
+  - Astoria: $32.8K
 
-sales (order_id, store_id, product_id, order_datetime, qty, unit_price, total_amount)
+- **Trend Over Time** – Daily bars vs. average line ($3,188) spotlighting any deviations  
+- **Sales by Category**:  
+  - Coffee: $38.3K (+30.9%)  
+  - Tea: $27.9K (+28.4%)  
+  - Bakery: $11.9K (–31.7%)  
+  - Drinking Chocolate: $10.2K  
+  - Coffee Beans: $5.2K
 
-stores (store_id, store_name, city, region)
+- **Top Products**:  
+  - Barista Espresso: $13.1K (+30.4%)  
+  - Brewed Chai Tea: $11.0K (+31.6%)  
+  - Hot Chocolate: $10.2K (+26.1%)
 
-products (product_id, product_name, category)
+- **Day × Hour Heatmap** – Highlights peak demand between 10 AM–12 PM on weekdays; reduced evening activity
 
-calendar (date, day_of_week, month, year, is_weekend)
+**Business Impact & Insights**
 
-Scope: Daily and hourly granularity for the selected month with historical months available for MoM comparisons.
+- **Revenue Growth**: +29% MoM indicates strong sales strategy  
+- **Staff Optimization**: Morning weekday highs guide staffing decisions  
+- **Product Mix Strategy**: Coffee & tea lead revenue; bakery’s decline suggests a promotion or refresh opportunity
 
-3.Key features / highlights
-
-Top KPIs: Total Sales, Total Orders, Total Quantity (with MoM % and sparkline trend).
-
-Calendar heat map: Dynamic month slicer; days colored by sales volume; tooltips show Sales/Orders/Quantity.
-
-Daily sales trend with average line: Bars for daily sales with dotted average line; bars above/below average visually called out.
-
-Sales by Product Category & Top 10 Products: Ranked bars with MoM change badges to guide promotions and inventory.
-
-Day × Hour heatmap: Visualize hourly demand across weekdays to optimize staffing.
-
-Store-level analytics: MoM comparisons for each store to detect under/over-performance.
-
-Drill-through & filters: Click to drill into transactions or filter across the report by store, product, or date.
-
-4.Walkthrough of Key Visuals
-Key KPIs (Top Row Cards)
-
-Total Sales: $99K (+29.8% vs LM)
-
-Total Orders: 21,229 (+29.8% vs LM)
-
-Total Quantity Sold: 30,406 (+29.1% vs LM)
-
-Avg Daily Sales: $3,188
-
-Calendar Heatmap (Monthly View)
-Interactive monthly calendar highlights daily sales, showing peak vs. low-performing days.
-
-Sales by Weekday vs Weekend (Donut Chart)
-
-Weekday Sales: $73K (74%)
-
-Weekend Sales: $25K (26%)
-
-Sales by Store Location (Bar Chart)
-Compares sales performance across branches:
-
-Hell’s Kitchen: $33.1K
-
-Lower Manhattan: $32.8K
-
-Astoria: $32.8K
-
-Sales Trend Over Time (Bar + Line Chart)
-Daily sales bars compared against average sales line ($3,188). Identifies days above/below benchmark.
-
-Sales by Product Category (Bar Chart)
-
-Coffee: $38.3K (+30.9%)
-
-Tea: $27.9K (+28.4%)
-
-Bakery: $11.9K (–31.7%)
-
-Drinking Chocolate: $10.2K
-
-Coffee Beans: $5.2K
-
-Top Selling Products (Bar Chart)
-Highlights leading items such as:
-
-Barista Espresso: $13.1K (+30.4%)
-
-Brewed Chai Tea: $11.0K (+31.6%)
-
-Hot Chocolate: $10.2K (+26.1%)
-
-Sales by Day & Hour (Heatmap)
-Shows hourly sales across weekdays and weekends. Strongest demand between 10 AM–12 PM on weekdays; weaker sales in evenings.
-
-5.Business Impact & Insights
-
-Revenue Growth Monitoring: Month-over-month increases (+29%) signal effective sales strategies.
-
-Staff Optimization: Peak weekday and morning demand guide smarter scheduling.
-
-Product Mix Strategy: Coffee & Tea drive majority of revenue; bakery decline suggests need for promotion or menu refresh.
-
-Store Performance Benchmarking: Location comparison reveals strong Hell’s Kitchen performance and opportunities to boost Lower Manhattan/Astoria.
-
-Targeted Promotions: Calendar and heatmap insights allow running offers during slow days and evening hours.
-
+- **ScreenShot**
+- 
