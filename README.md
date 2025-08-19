@@ -72,5 +72,5 @@ The **Coffee Shop Sales Dashboard** provides an at-a-glance, drill-down view of 
 - **Staff Optimization**: Morning weekday highs guide staffing decisions  
 - **Product Mix Strategy**: Coffee & tea lead revenue; bakery’s decline suggests a promotion or refresh opportunity
 
-- **ScreenShot**
-- 
+ **ScreenShot**
+https://github.com/rahuldhakar-tech/Coffee-shop-sales/blob/main/Snapshot%20coffee%20sales.PNG
